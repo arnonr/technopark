@@ -11,7 +11,7 @@
           >
             <a
               href="#"
-              :data-category="'.news-' + it.category"
+              :data-category="'.' + it.category"
               :data-n-type-id="it.id"
               >{{ it.name }}</a
             >
@@ -39,7 +39,7 @@
         <div
           v-for="(it, index) in news"
           :key="index"
-          class="news-item portfolio-item img-zoom news-technopark news-all"
+          :class="'news-item portfolio-item img-zoom news-technopark news-all '+it.category "
         >
           <div class="portfolio-item-wrap">
             <!-- Post item-->
@@ -89,22 +89,22 @@ const newsType = ref([
   {
     id: null,
     name: "ข่าวทั้งหมด",
-    category: "all",
+    category: "news-all",
   },
   {
     id: 1,
     name: "อุทยานเทคโนโลยี",
-    category: "tecnopark",
+    category: "news-tecnopark",
   },
   {
     id: 2,
     name: "ทุนการศึกษาและนวัตกรรม",
-    category: "scholarship",
+    category: "news-scholarship",
   },
   {
     id: 3,
     name: "การศึกษา",
-    category: "education",
+    category: "news-education",
   },
 ]);
 
@@ -1073,6 +1073,8 @@ const news = ref([
     ],
   },
 ]);
+
+
 
 // news.value = await useFetch("https://dummyjson.com/products", {
 //   params: {

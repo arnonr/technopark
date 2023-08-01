@@ -131,7 +131,8 @@ body.breakpoint-sm .grid li {
     color: #ff6600;
 }
 
-.grid-filter.gf-creative li.active a, .grid-filter.gf-creative li a:after {
+.grid-filter.gf-creative li.active a,
+.grid-filter.gf-creative li a:after {
     color: #ff6600;
 }
 
@@ -140,7 +141,30 @@ body.breakpoint-sm .grid li {
     background: #ff6600;
 }
 
+.hr-primary {
+    border: solid 2px #ff6600;
+}
 
+a {
+    color: #555
+}
+
+button.btn.btn-primary:hover,
+button.btn.btn-primary:focus,
+button.btn.btn-primary:not(:disabled):not(.disabled):active,
+button.btn.btn-primary:not(:disabled):not(.disabled).active,
+.btn:not(.close):not(.mfp-close).btn-primary:hover,
+.btn:not(.close):not(.mfp-close).btn-primary:focus,
+.btn:not(.close):not(.mfp-close).btn-primary:not(:disabled):not(.disabled):active,
+.btn:not(.close):not(.mfp-close).btn-primary:not(:disabled):not(.disabled).active,
+a.btn:not([href]):not([tabindex]).btn-primary:hover,
+a.btn:not([href]):not([tabindex]).btn-primary:focus,
+a.btn:not([href]):not([tabindex]).btn-primary:not(:disabled):not(.disabled):active,
+a.btn:not([href]):not([tabindex]).btn-primary:not(:disabled):not(.disabled).active {
+    background-color: #ff5500;
+    border-color: #ff5500;
+    color: #fff;
+}
 
 @media (min-width: 821px) {
     #mainMenu>div>nav>ul>li {
