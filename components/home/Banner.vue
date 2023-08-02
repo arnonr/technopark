@@ -26,8 +26,10 @@
       clickable: true,
     }"
   >
-    <SwiperSlide v-for="it in banners" :key="it.id">
-      <img :src="it.slide_file" class="img-banner" />
+    <SwiperSlide v-for="it in items" :key="it.id">
+      <a :href="it.banner_url">
+        <img :src="it.banner_file" class="img-banner"
+      /></a>
     </SwiperSlide>
 
     <!-- If we need navigation buttons -->
@@ -42,20 +44,17 @@
   </Swiper>
 </template>
 <script setup>
-const banners = ref([
-  {
-    id: 1,
-    name: "slide1",
-    slide_file: "/images/banner/banner1.jpeg",
-    url: null,
+const runtimeConfig = useRuntimeConfig();
+
+const items = await $fetch(`${runtimeConfig.public.apiBase}/banner`, {
+  params: {
+    is_publish: 1,
   },
-  {
-    id: 2,
-    name: "slide2",
-    slide_file: "/images/banner/banner1.jpeg",
-    url: null,
-  },
-]);
+})
+  .then((res) => {
+    return res.data;
+  })
+  .catch((error) => error.data);
 </script>
 
 <style scoped>

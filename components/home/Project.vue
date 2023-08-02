@@ -21,22 +21,22 @@ const project = ref([
   {
     name: "ศูนย์ปฏิบัติการ",
     project_file: "/images/iconwebtechnopark/center_black.png",
-    url: "/images/iconwebtechnopark/center_black.png",
+    url: "#",
   },
   {
     name: "หลักสูตร",
     project_file: "/images/iconwebtechnopark/program_black.png",
-    url: "/images/iconwebtechnopark/program_black.png",
+    url: "#",
   },
   {
     name: "65 ปี มจพ.",
     project_file: "/images/iconwebtechnopark/65_black.png",
-    url: "/images/iconwebtechnopark/65_black.png",
+    url: "#",
   },
   {
     name: "ผลงานโดดเด่น",
     project_file: "/images/iconwebtechnopark/project_black.png",
-    url: "/images/iconwebtechnopark/project_black.png",
+    url: "#",
   },
 ]);
 </script>
