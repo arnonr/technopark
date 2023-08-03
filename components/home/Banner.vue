@@ -4,7 +4,6 @@
     :modules="[SwiperAutoplay, SwiperNavigation, SwiperPagination]"
     :loop="true"
     :effect="'creative'"
-    ,
     :autoplay="{
       delay: 5000,
       disableOnInteraction: false,

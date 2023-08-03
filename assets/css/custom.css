@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Prompt:100,200,400,500,600,700,800");
 
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:400&family=Noto+Sans+Thai:wght@100&display=swap");
+
+
+
 body {
     font-family: "Prompt", sans-serif;
 }
@@ -84,9 +88,10 @@ div#logo>a>span>img {
     color: #000;
 }
 
-#footer a:not(.btn):not(.badge):hover,
-a:not(.btn):not(.badge):focus,
-a:not(.btn):not(.badge):active {
+#footer a:not(.btn):not(.badge):hover
+
+/* a:not(.btn):not(.badge):focus,
+a:not(.btn):not(.badge):active { */{
     text-decoration: none;
     outline: none;
     color: #ff6600;

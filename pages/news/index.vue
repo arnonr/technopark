@@ -1,6 +1,6 @@
 <template>
   <!-- NEWS -->
-  <section class="section-news">
+  <section id="page-content">
     <div class="container">
       <!-- Portfolio Filter -->
       <nav class="grid-filter gf-outline">
@@ -49,23 +49,36 @@
         </div>
       </div>
       <!-- end: Portfolio -->
-      <div class="div-btn-news">
-        <NuxtLink to="/news" class="a-news-all float-right">
-          <button type="button" class="btn btn-rounded btn-outline">
-            ดูข่าวทั้งหมด <span class="text-news-all"></span>
-            <i class="fa fa-arrow-right"></i>
-          </button>
-        </NuxtLink>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <span class="text-sm text-disabled">
+            Showing {{ currentPage }} to {{ totalPage }} of
+            {{ totalItems }} entries
+          </span>
+        </div>
       </div>
-      <!-- end: Portfolio -->
+
+      <Pagination
+        :totalPage="totalPage"
+        :currentPage="currentPage"
+        @update:currentPage="currentPage = $event"
+      />
     </div>
   </section>
+
   <!-- end: NEWS -->
 </template>
 <script setup>
 const runtimeConfig = useRuntimeConfig();
 
 onMounted(async () => {});
+
+// News Type
+// const { data: news_type_item } = await useFetch(
+//   `${runtimeConfig.public.apiBase}/news-type`
+// );
+
 const newsType = await $fetch(`${runtimeConfig.public.apiBase}/news-type`, {
   params: {
     is_publish: 1,
@@ -87,28 +100,41 @@ const newsType = await $fetch(`${runtimeConfig.public.apiBase}/news-type`, {
   })
   .catch((error) => error.data);
 
+const items = ref([]);
+const perPage = ref(12);
+const currentPage = ref(1);
+const totalPage = ref(1);
+const totalItems = ref(0);
+
 const search = ref({
   news_type_id: undefined,
   is_publish: 1,
 });
 
-const items = ref([]);
-
 const fetchItems = async () => {
   await $fetch(`${runtimeConfig.public.apiBase}/news`, {
     params: {
       ...search.value,
-      perPage: 8,
-      currentPage: 1,
+      perPage: perPage.value,
+      currentPage: currentPage.value,
     },
   })
     .then((res) => {
       console.log(res.data);
       items.value = res.data;
+
+      totalPage.value = res.totalPage;
+      totalItems.value = res.totalData;
+
+      window.scrollTo(0, 0);
     })
     .catch((error) => error.data);
 };
 fetchItems();
+
+// const pagination = (() => {
+//     totalItems.value/
+// })
 
 const onChangeNewsType = async (id) => {
   newsType.forEach((el) => {
@@ -122,6 +148,12 @@ const onChangeNewsType = async (id) => {
   fetchItems();
   //
 };
+
+watchEffect(fetchItems);
+
+watchEffect(() => {
+  if (currentPage.value > totalPage.value) currentPage.value = totalPage.value;
+});
 </script>
 <style scoped>
 .portfolio-item a:not(.btn),
@@ -137,15 +169,15 @@ const onChangeNewsType = async (id) => {
   text-decoration: none;
 }
 
+/* .post-item.border .post-item-wrap {
+    border: 1px solid #aaaaaa;
+  } */
+
 a:not(.btn):not(.badge):not(.btn):not([href]):not([tabindex]) {
   color: #ff6600;
   text-decoration: none;
   cursor: pointer;
 }
-
-/* .post-item.border .post-item-wrap {
-    border: 1px solid #aaaaaa;
-  } */
 
 .post-item.border > .post-item-wrap > .post-item-description {
   padding: 18px !important;

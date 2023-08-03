@@ -1,18 +1,23 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  //   devtools: { enabled: true },
+  //   ssr: false,
+  devtools: { enabled: true },
   runtimeConfig: {
     // The private keys which are only available within server-side
-    apiSecret: "okgfregojerkgjerkgjerjg",
+    apiSecret: "",
     // Keys within public, will be also exposed to the client-side
     public: {
-      apiBase: "http://localhost:3003/api/v1",
+      apiBase: "",
     },
   },
   app: {
     head: {
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          "http-equiv": "Content-Type",
+          content: "text/html; charset=utf-8",
+        },
       ],
       script: [
         {

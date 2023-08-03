@@ -30,9 +30,10 @@
     </table>
   </div>
   <div class="text-center">
-    <a href="#" class="btn btn-rounded btn-outline"
-      >ข่าวประกาศทั้งหมด <i class="fa fa-arrow-right"></i
-    ></a>
+    <NuxtLink to="/annouce" class="btn btn-rounded btn-outline">
+      ข่าวประกาศทั้งหมด <i class="fa fa-arrow-right"></i
+    >
+</NuxtLink>
   </div>
 </template>
 

@@ -74,7 +74,7 @@
               <nav class="d-flex justify-content-center">
                 <ul>
                   <li class="nav-menu-first">
-                    <a href="index.html">หน้าหลัก</a>
+                    <NuxtLink to="/"> หน้าหลัก </NuxtLink>
                   </li>
                   <li class="dropdown">
                     <a href="#">หลักสูตร</a>
