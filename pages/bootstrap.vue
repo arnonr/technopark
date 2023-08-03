@@ -21,7 +21,6 @@
 export default {
   methods: {
     doToast() {
-      console.log("FREEDOM");
       // toastLiveExam
 
     //   const toastBootstrap = bootstrap.Toast.getOrCreateInstance(

@@ -24,7 +24,7 @@
         <!-- portfolio item -->
         <div class="row">
           <div class="col-lg-3" v-for="(it, index) in items" :key="index">
-            <NuxtLink href="">
+            <NuxtLink :to="'news/' + it.id">
               <div class="card">
                 <img
                   class="card-img-top img-responsive"
@@ -37,8 +37,7 @@
                   </h4>
                 </div>
                 <div class="card-footer">
-                  อ่านต่อ <i class="fa fa-arrow-right news-link-view"></i
-                  >
+                  อ่านต่อ <i class="fa fa-arrow-right news-link-view"></i>
                   <span class="tag-news" style="float: right">
                     <i class="fa fa-tag"></i> {{ it.news_type.name }}
                   </span>
@@ -121,7 +120,6 @@ const fetchItems = async () => {
     },
   })
     .then((res) => {
-      console.log(res.data);
       items.value = res.data;
 
       totalPage.value = res.totalPage;

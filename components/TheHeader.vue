@@ -7,7 +7,7 @@
           <div class="col-md-10">
             <!--Logo-->
             <div id="logo">
-              <a href="index.html">
+              <a href="#">
                 <span class="logo-default">
                   <img
                     class="img-logo float-left"
@@ -34,13 +34,6 @@
             </div>
             <!--End: Logo-->
           </div>
-          <!-- <div class="col-md-6 d-none d-sm-block">
-            <div class="social-icons social-icons-colored-hover">
-              <ul>
-                    <li><a href="#"></a></li>
-              </ul>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
@@ -50,7 +43,7 @@
         <div class="container">
           <!--Logo-->
           <div id="logo" class="d-block d-sm-none">
-            <a href="index.html">
+            <NuxtLink to="/">
               <span class="logo-default">
                 <img
                   class="img-logo"
@@ -59,7 +52,7 @@
                   style="width: 80px"
                 />
               </span>
-            </a>
+            </NuxtLink>
           </div>
           <!--End: Logo-->
 
@@ -79,7 +72,9 @@
                   <li class="dropdown">
                     <a href="#">หลักสูตร</a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">อยู่ระหว่างการพัฒนา</a></li>
+                      <li>
+                        <NuxtLink to="/"> รออัพเดท </NuxtLink>
+                      </li>
                     </ul>
                   </li>
 
@@ -118,15 +113,15 @@
                         </NuxtLink>
                       </li>
                       <li>
-                        <a href="#"> <i class="fa fa-users"></i>บุคลากร</a>
+                        <NuxtLink to="/about/2">
+                          <i class="fa fa-users"></i>บุคลากร
+                        </NuxtLink>
                       </li>
                     </ul>
                   </li>
 
                   <li>
-                    <NuxtLink to="/about/4">
-                      ติดต่อเรา
-                    </NuxtLink>
+                    <NuxtLink to="/about/4"> ติดต่อเรา </NuxtLink>
                   </li>
                 </ul>
               </nav>

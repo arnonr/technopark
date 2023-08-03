@@ -19,7 +19,6 @@ const item = ref({});
 const fetchItem = async () => {
   await $fetch(`${runtimeConfig.public.apiBase}/about/${route.params.id}`)
     .then((res) => {
-      console.log(res.data);
       item.value = res.data;
 
       window.scrollTo(0, 0);

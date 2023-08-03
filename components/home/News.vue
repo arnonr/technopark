@@ -24,7 +24,7 @@
         <!-- portfolio item -->
         <div class="row">
           <div class="col-lg-3" v-for="(it, index) in items" :key="index">
-            <NuxtLink href="">
+            <NuxtLink :to="'news/'+it.id">
               <div class="card">
                 <img
                   class="card-img-top img-responsive"
@@ -103,7 +103,6 @@ const fetchItems = async () => {
     },
   })
     .then((res) => {
-      console.log(res.data);
       items.value = res.data;
     })
     .catch((error) => error.data);
