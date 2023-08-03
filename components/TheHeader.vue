@@ -101,21 +101,21 @@
                     <a href="#">เกี่ยวกับเรา</a>
                     <ul class="dropdown-menu">
                       <li>
-                        <a href="#">
+                        <NuxtLink to="/about/1">
+                          <i class="fa fa-info-circle"></i> ความเป็นมา
+                        </NuxtLink>
+                      </li>
+                      <li>
+                        <NuxtLink to="/about/2">
                           <i class="fa fa-info-circle"></i>
-                          ความเป็นมา</a
-                        >
+                          ปรัชญา/ปณิธาน/วิสัยทัศน์
+                        </NuxtLink>
                       </li>
                       <li>
-                        <a href="#">
-                          <i class="fa fa-info-circle"></i
-                          >ปรัชญา/ปณิธาน/วิสัยทัศน์</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-sitemap"></i>โครงสร้างองค์กร</a
-                        >
+                        <NuxtLink to="/about/3">
+                          <i class="fa fa-sitemap"></i>
+                          โครงสร้างองค์กร
+                        </NuxtLink>
                       </li>
                       <li>
                         <a href="#"> <i class="fa fa-users"></i>บุคลากร</a>
@@ -123,8 +123,10 @@
                     </ul>
                   </li>
 
-                  <li class="dropdown">
-                    <a href="#">ติดต่อเรา</a>
+                  <li>
+                    <NuxtLink to="/about/4">
+                      ติดต่อเรา
+                    </NuxtLink>
                   </li>
                 </ul>
               </nav>

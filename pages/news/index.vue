@@ -24,26 +24,27 @@
         <!-- portfolio item -->
         <div class="row">
           <div class="col-lg-3" v-for="(it, index) in items" :key="index">
-            <div class="card">
-              <img
-                class="card-img-top img-responsive"
-                :src="it.news_file"
-                alt="Card image cap"
-              />
-              <div class="card-body" style="min-height: 200px">
-                <h4 style="font-size: 1.2em" class="card-title">
-                  {{ it.title }}
-                </h4>
+            <NuxtLink href="">
+              <div class="card">
+                <img
+                  class="card-img-top img-responsive"
+                  :src="it.news_file"
+                  alt="Card image cap"
+                />
+                <div class="card-body" style="min-height: 200px">
+                  <h4 style="font-size: 1.2em" class="card-title">
+                    {{ it.title }}
+                  </h4>
+                </div>
+                <div class="card-footer">
+                  อ่านต่อ <i class="fa fa-arrow-right news-link-view"></i
+                  >
+                  <span class="tag-news" style="float: right">
+                    <i class="fa fa-tag"></i> {{ it.news_type.name }}
+                  </span>
+                </div>
               </div>
-              <div class="card-footer">
-                <NuxtLink href=""
-                  >อ่านต่อ <i class="fa fa-arrow-right news-link-view"></i
-                ></NuxtLink>
-                <span class="tag-news" style="float: right">
-                  <i class="fa fa-tag"></i> {{ it.news_type.name }}
-                </span>
-              </div>
-            </div>
+            </NuxtLink>
           </div>
           <!-- end: portfolio item -->
         </div>
@@ -189,5 +190,9 @@ a:not(.btn):not(.badge):not(.btn):not([href]):not([tabindex]) {
 
 .menu-tab > a:active {
   text-decoration: none;
+}
+
+.tag-news {
+  color: #999;
 }
 </style>
